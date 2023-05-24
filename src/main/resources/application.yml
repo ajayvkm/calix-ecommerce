@@ -1,0 +1,28 @@
+server:
+  port: ${PORT:8989}
+  servlet:
+    context-path: /commerce
+
+spring:
+  application:
+    name: ecommerce
+
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    hibernate.use-new-id-generator-mappings: false
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: 'jdbc:mysql://${db.host:localhost}:${db.port:3306}/calix_ecommerce?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC'
+    username: root
+    password: adminadmin
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: info
