@@ -1,4 +1,4 @@
-package com.calix.ecommerce.model.entity;
+package com.calix.ecommerce.models.entity;
 
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;

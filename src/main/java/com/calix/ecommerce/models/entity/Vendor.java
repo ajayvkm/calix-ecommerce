@@ -1,4 +1,4 @@
-package com.calix.ecommerce.model.entity;
+package com.calix.ecommerce.models.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +21,7 @@ public class Vendor extends AbstractBaseEntity {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vendor")
-    private List<Transaction> vendors;
-
+    public Vendor(String name) {
+        this.name = name;
+    }
 }

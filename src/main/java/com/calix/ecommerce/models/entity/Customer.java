@@ -1,5 +1,6 @@
-package com.calix.ecommerce.model.entity;
+package com.calix.ecommerce.models.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -30,5 +32,11 @@ public class Customer extends AbstractBaseEntity {
     private String category;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
-    private List<Transaction> transactions;
+    private Set<Transaction> transactions;
+
+    public Customer(String name, String email, String category) {
+        this.name = name;
+        this.email = email;
+        this.category = category;
+    }
 }

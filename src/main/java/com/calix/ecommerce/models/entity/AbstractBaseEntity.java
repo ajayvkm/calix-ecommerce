@@ -1,4 +1,4 @@
-package com.calix.ecommerce.model.entity;
+package com.calix.ecommerce.models.entity;
 
 import lombok.Getter;
 import lombok.Setter;
